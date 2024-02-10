@@ -1,0 +1,277 @@
+/* VARIABLES */
+
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #218838;
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+    --margin: 20px;
+}
+
+/* LAYOUT */
+
+.container-edit-specialist {
+    
+    max-width: 800px;
+    margin: 3% auto;
+    padding: var(--margin);
+    background-color: rgba(0, 0, 0, 0.801);
+    border-radius: 10px;
+    border: solid, 3px, rgb(119, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-edit-specialist {
+    display: flex;
+    flex-direction: column;
+    border: solid, 3px, rgb(119, 255, 255);
+}
+
+.formTitle {
+    color: rgb(119, 255, 255);
+    margin: auto;
+}
+
+.alert-message{
+    background-color: #f8d7da; /* Color de fondo rojo claro (puedes cambiarlo según tus preferencias) */
+    color: #721c24; /* Color del texto oscuro (puedes cambiarlo según tus preferencias) */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #f5c6cb; /* Borde rojo claro */
+    border-radius: 5px; /* Esquinas redondeadas */
+    margin-top: -1%; /* Espaciado superior */
+    margin-bottom: 0.8%; /* Espaciado superior */
+    font-size: 14px; /* Tamaño del texto */
+}
+
+
+
+/* LABELS */
+
+.label-edit-specialist {
+    font-size: var(--font-size);
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+/* INPUTS */
+
+.input-edit-specialist {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: var(--font-size);
+    border: 1px solid #ced4da;
+    background-color: #c4c4c4;
+    border-radius: 5px;
+}
+
+.basic-information{
+    margin-top:2%;
+    margin-bottom: 3%;
+    color: rgb(119, 255, 255);
+}
+
+.profile-title{
+    margin-top:2%;
+    margin-bottom: 3%;
+    color: rgb(119, 255, 255);
+}
+
+.input-edit-specialist:focus {
+    border-radius: 5px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* BUTTONS */
+
+.button-edit-specialist {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px;
+    font-size: var(--font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-edit-specialist:hover {
+    background-color: var(--secondary-color);
+}
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 600px) {
+    .container-edit-specialist {
+        max-width: 100%;
+        border: solid, 3px, rgb(119, 255, 255);
+
+    }
+}
+
+/* ANIMATION */
+
+.form-edit-specialist {
+    animation: form-edit-specialist-show 0.5s ease-in-out;
+    border: solid, 3px, rgb(119, 255, 255);
+
+}
+
+@keyframes form-edit-specialist-show {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+        border: solid, 3px, rgb(119, 255, 255);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        border: solid, 3px, rgb(119, 255, 255);
+
+    }
+}
+
+/* VALIDATION STYLES */
+
+.input-edit-specialist.is-invalid {
+    border-color: red;
+}
+
+.input-edit-specialist.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+/* ACCESSIBILITY */
+
+.label-edit-specialist {
+    text-align: left;
+    color: #8d9094;
+}
+
+.input-edit-specialist {
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.button-edit-specialist {
+    cursor: pointer;
+}
+
+/* UPLOAD FILE STYLES */
+
+.file-upload-container {
+    position: relative;
+    margin-bottom: 15px;
+    background-color: #8afcf6;
+
+}
+
+.file-upload-label {
+    display: inline-block;
+    background-color: #8afcf6;
+    color: #fff;
+    padding: 12px;
+    font-size: var(--font-size);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: #8afcf6;
+
+}
+
+.selected-file-info {
+    margin-top: 10px;
+    font-size: var(--font-size);
+    color: #0f0f0f;
+    background-color: #8afcf6;
+
+}
+
+.button-edit-specialist-disabled{
+    background-color: #adadadc9; 
+    color: #9cdcf0;
+    padding: 12px;
+    font-size: var(--font-size);
+    cursor: not-allowed; 
+    border-radius: 5px;
+    border: none;
+    pointer-events: none; 
+    background-color: #28a745;
+
+
+}
+
+.conditionalMsg{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.801);
+    margin-top: 10%;
+    border-radius: 25px;
+    padding: 20px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.headMsg{
+    color: #61fbc0;
+    border-bottom: 2px, solid, #61fbc0;
+    text-decoration: underline ;
+}
+
+
+.container-edit-specialist .react-phone-number-input {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px; /* Agregado espacio inferior para separarlo de otros formularios */
+  }
+  
+  /* Estilos para el input dentro de PhoneInput */
+  .container-edit-specialist .react-phone-number-input__input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Color del borde más claro */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Agregado espacio inferior para separarlo de otros elementos */
+  }
+  
+  /* Estilos para el dropdown de códigos de país */
+  .container-edit-specialist .react-phone-number-input__country-select {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para los items en el dropdown */
+  .container-edit-specialist .react-phone-number-input__country-select-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Estilos para el botón que abre el dropdown */
+  .container-edit-specialist .react-phone-number-input__icon {
+    color: #555; /* Color del ícono más oscuro */
+  }
+  
+./* Estilos para el input de Idioma */
+.container-edit-specialist #language {
+    margin-top: 40px; /* Ajusta el valor según la cantidad de espacio que desees */
+  }
+  

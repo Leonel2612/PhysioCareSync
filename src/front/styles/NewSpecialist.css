@@ -1,0 +1,116 @@
+.progress {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.progress::-webkit-progress-bar,
+.progress::-webkit-progress-value {
+  background-color: transparent;
+}
+
+.progress.password-strength-0::-webkit-progress-value,
+.progress.password-strength-1::-webkit-progress-value {
+  background-color: #e74c3c; /* Red for strength 0 and 1 */
+}
+
+.progress.password-strength-2::-webkit-progress-value {
+  background-color: #e67e22; /* Orange for strength 2 */
+}
+
+.progress.password-strength-3::-webkit-progress-value,
+.progress.password-strength-4::-webkit-progress-value {
+  background-color: #2ecc71; /* Green for strength 3 and 4 */
+}
+
+.password-feedback {
+  margin-left: 10px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.patientForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 95%; /* Ajusta según tus necesidades */
+  background-color: rgba(0, 0, 0, 0.801);
+  margin-top: 5%;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.form-control {
+  width: 100%;
+  margin: auto;
+  background-color: rgb(68, 68, 68);
+  border: none;
+}
+
+.title {
+  display: flex;
+  margin: auto;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createNewBtn {
+  margin: auto;
+}
+
+.exitBtn {
+  margin-left: 50px;
+}
+
+.errorMsg {
+  margin-left: 2.5%;
+  color: yellow;
+  margin-bottom: -10px;
+}
+
+.speciality {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .patientForm {
+    width: 100%;
+  }
+  
+  .exitBtn {
+    margin-left: 0;
+    margin-top: 10px; 
+    text-align: center; 
+    width: fit-content; 
+    margin: auto;
+    display: block; 
+  }
+}
+
+.speciality {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .createNewBtn {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+}
+

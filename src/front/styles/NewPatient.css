@@ -1,0 +1,104 @@
+.password-strength {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.progress-strength {
+  width: 100%; /* Full width */
+  height: 5px; /* Thinner bar */
+  border-radius: 5px;
+  background-color: #e0e0e0; /* Default color */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Color ranges for password strength */
+.progress-strength-0 {
+  background-color: #e74c3c; /* Red */
+}
+
+.progress-strength-1 {
+  background-color: #e67e22; /* Orange */
+}
+
+.progress-strength-2 {
+  background-color: #f1c40f; /* Yellow */
+}
+
+.progress-strength-3,
+.progress-strength-4 {
+  background-color: #2ecc71;
+}
+
+/* Remove extra styling */
+.progress-strength::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.progress-strength::-webkit-progress-value {
+  background-color: transparent;
+}
+
+.password-feedback {
+  margin-left: 10px;
+  color: #6c757d; 
+}
+
+.patientForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 95%; /* Ajusta según tus necesidades */
+  background-color: rgba(0, 0, 0, 0.801);
+  margin-top: 5%;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.form-control {
+  width: 100%;
+  margin: auto;
+  background-color: rgb(68, 68, 68);
+  border: none;
+}
+
+.title {
+  display: flex;
+  margin: auto;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createNewBtn {
+  margin: auto;
+}
+
+.exitBtn {
+  margin-left: 50px;
+}
+
+.errorMsg {
+  margin-left: 2.5%;
+  color: yellow;
+  margin-bottom: -10px;
+}
+
+.speciality {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .patientForm {
+    width: 100%;
+  }
+  
+  .exitBtn {
+    margin-left: 0;
+  }
+}

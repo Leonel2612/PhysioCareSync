@@ -1,0 +1,143 @@
+.newProperty1DefaultAlt {
+    max-width: 550px;
+    margin: 40px auto;
+    background-color: #646464; /* Fondo negro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .newCopyComponent {
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .newTitle {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #fff; /* Letras blancas */
+  }
+  
+  .newShortDescription {
+    font-size: 1.2em;
+    color: #ddd; /* Letras gris claro */
+    margin-bottom: 10px;
+  }
+  
+  .newPrice1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .newB {
+    font-size: 1.5em;
+    color: #27ae60;
+  }
+  
+  .newB2 {
+    font-size: 0.8em;
+    margin-left: 2px;
+    color: #27ae60;
+  }
+  
+  .newFeatureList1 {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .newListItem {
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .newCheckcircleIcon,
+  .newCheckcircleIcon5 {
+    margin-right: 10px;
+  }
+  
+  .newTag {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .newBestDeal {
+    background-color: #27ae60;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
+  
+  
+
+  .newButton1:hover {
+    background-color: #2980b9;
+  }
+
+  .membershipCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+  }
+  
+  
+
+
+  body {
+    background-color: #181618; /* Fondo negro */
+
+  }
+  
+  .newPrice1 b {
+    font-size: 2em; /* Ajusta el tamaño del precio */
+  
+  }
+  .newTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Adjust the margin as needed */
+  }
+  
+  .newButton1 {
+    background-color: #329e5f;
+    color: #fff;
+    padding: 0.5rem 1rem; /* Adjust the padding to make it smaller */
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.8em; /* Adjust the font size to make it smaller */
+  }
+  
+  .newButton1:hover {
+    background-color: #218e53;
+  }
+  
+  .joinNowButton {
+    background-color: #4CAF50; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave en el cambio de color de fondo */
+  }
+  
+  .joinNowButton:hover {
+    background-color: #45a049; /* Color de fondo al pasar el ratón */
+  }

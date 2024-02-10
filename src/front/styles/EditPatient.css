@@ -1,0 +1,159 @@
+
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #218838;
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+    --margin: 20px;
+}
+
+.container-edit-patient{
+
+    max-width: 800px;
+    margin: 3% auto;
+    padding: var(--margin);
+    background-color: rgba(0, 0, 0, 0.801);
+    border-radius: 10px;
+    border: solid, 3px, rgb(119, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #8d9094;
+    
+}
+
+.form-edit-patient{
+    display: flex;
+    flex-direction: column;
+    border: solid, 3px, rgb(119, 255, 255);
+
+}
+
+.label-edit-patient{
+    font-size: var(--font-size);
+    margin-bottom: 10px;
+    color: #8d9094;
+
+}
+
+.input-edit-patient{
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: var(--font-size);
+    border: 1px solid #ced4da;
+    background-color: #c4c4c4;
+    border-radius: 5px;  
+
+}
+
+.input-edit-patient:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.button-edit-patient{
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px;
+    font-size: var(--font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+ 
+}
+
+.button-edit-patient:hover{
+    background-color: var(--secondary-color);
+
+}
+
+.button-edit-patient-disabled{
+    background-color: #adadadc9; 
+    color: #fff;
+    padding: 12px;
+    font-size: var(--font-size);
+    cursor: not-allowed; 
+    border-radius: 5px;
+    border: none;
+    pointer-events: none; 
+
+}
+
+.PhoneInput {
+    width: 100%;
+    margin-bottom: 20px; /* Añade un margen inferior de 20px (puedes ajustarlo según sea necesario) */
+  }
+  
+  .PhoneInputInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .PhoneInputInput:focus {
+    border-color: #2c3e50;
+  }
+  
+  /* Estilos para el contenedor del botón si lo tienes */
+  .button-edit-patient {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-edit-patient:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Otros estilos específicos para tu formulario si es necesario */
+  .adminContent{
+    margin: auto;
+  }
+
+  /* Estilos para pantallas de hasta 600px de ancho */
+@media (max-width: 600px) {
+  .container-edit-patient {
+    max-width: 100%;
+    margin: 5% auto;
+  }
+  .form-edit-patient {
+    border: none;
+  }
+  .label-edit-patient {
+    font-size: 14px;
+  }
+  .input-edit-patient {
+    font-size: 14px;
+  }
+  .button-edit-patient {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .PhoneInput {
+    margin-bottom: 10px;
+  }
+}
+
+/* Estilos para pantallas de hasta 400px de ancho */
+@media (max-width: 400px) {
+  .label-edit-patient {
+    font-size: 12px;
+  }
+  .input-edit-patient {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .button-edit-patient {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
