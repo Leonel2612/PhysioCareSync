@@ -27,8 +27,8 @@ app.config["JWT_SECRET_KEY"] = "value_variable"
 jwt=JWTManager(app)
 bcrypt=Bcrypt(app)
 
-CORS(app, resources=r'/api/*')
-
+# CORS(app, resources=r'/api/*')
+CORS(app, resources={r'/api/*': {"origins": "*"}}, supports_credentials=True)
 # from models import Person
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
@@ -91,5 +91,6 @@ jwt=JWTManager(app)
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
-    PORT = int(os.environ.get('PORT', 3001))
+    PORT = int(os.environ.get('PORT', 5000))
+    # PORT = int(os.environ.get('PORT', 3001))
     app.run(host='0.0.0.0', port=PORT, debug=True)
