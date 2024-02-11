@@ -1,16 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { BackendURL } from "./component/backendURL";
 import ProfessionalDetailView from './component/ProfessionalDetailView';
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
 import LogIn from "./pages/LogIn";
 import LogInPatient from "./pages/LogInPatient";
 import LogInSpecialist from "./pages/LogInSpecialist";
@@ -54,7 +50,6 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        {/* <Route element={<Demo />} path="/demo" /> */}
                         <Route element={<LogIn />} path="/login" />
                         <Route element={<LogInPatient />} path="/login/loginPatient" />
                         <Route element={<LogInSpecialist />} path="/login/loginSpecialist" />
@@ -71,7 +66,6 @@ const Layout = () => {
                         <Route element={<EditSpecialist />} path="/edit/specialist" />
                         <Route element={<ProfilePatient />} exact path="profile/patient/:theid" />
                         <Route element={<ProfileSpecialist />} exact path="profile/specialist/:theid" />
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<FormSpecialist />} path="edit/formSpecialist" />
                         <Route element={<ProfessionalView />} path="/professionalView" />
                         <Route element={<ProfessionalViewAdmin />} path="professionalViewAdmin" />
