@@ -15,6 +15,7 @@ module.exports = {
   module: {
     rules: [
         {
+
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader']
@@ -40,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        favicon: '4geeks.ico',
+        favicon: 'heartbeat.png',
         template: 'template.html'
     }),
     new Dotenv({ safe: true, systemvars: true })
