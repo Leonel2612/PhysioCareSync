@@ -38,7 +38,11 @@ app = Flask (__name__)
 app.url_map.strict_slashes = False
 
 # database condiguration
-db_url = os.getenv("DATABASE_URL")
+# db_url = os.getenv("DATABASE_URL")
+db_url = "postgres://root:gqBFecKY2yuhWXf2WM0PfxXNNg4ZbxGe@dpg-cn41b4ocmk4c73el5oo0-a.oregon-postgres.render.com/postgres_database_0gbj"
+
+
+
 if db_url is not None:
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url.replace(
         "postgres://", "postgresql://")
