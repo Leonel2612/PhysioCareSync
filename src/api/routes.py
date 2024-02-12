@@ -317,6 +317,9 @@ def create_preference():
                 }
             ],
             "back_urls": {
+                # "success": "http://192.168.100.157:3000/success",
+                # "failure": "http://192.168.100.157:3000/failure",
+                # "pending": "http://192.168.100.157:3000/pending",
                 "success": "https://physiocaresync.onrender.com/success",
                 "failure": "https://physiocaresync.onrender.com/failure",
                 "pending": "https://physiocaresync.onrender.com/pending",
@@ -538,7 +541,6 @@ def get_information_certificates():
 @api.route("/webhook_mercadopago", methods=['POST'])
 def webhook_mercadopago():
     try:
-        
         userID = request.json.get("theid")
         print(f"Received  userID from Mercado Pago: {userID}")
 

@@ -522,6 +522,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						let store = getStore()
 						setStore({ ...store, preferenceId: id })
 						let store2 = getStore()
+						console.log("Este es el contenido de id en el store: ",store2.preferenceId.id)
 						return id;
 					} else {
 						console.error("Error creating preference, o sea response.ok dio false en flux.js");
