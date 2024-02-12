@@ -317,8 +317,8 @@ def create_preference():
                 }
             ],
             "back_urls": {
-                "success": "https://physiocaresync.onrender.com//success",
-                "failure": "https://physiocaresync.onrender.com//failure",
+                "success": "https://physiocaresync.onrender.com/success",
+                "failure": "https://physiocaresync.onrender.com/failure",
                 "pending": "https://physiocaresync.onrender.com/pending",
             },
             "auto_return": "approved",
