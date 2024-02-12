@@ -98,7 +98,7 @@ const EditPatient = () => {
             setEditSuccess(true)
             snackRef.current.show()
         } else if (result.error) {
-            console.log("Error al actualizar los datos de usuario")
+            console.log(result.error)
             snackRef.current.show()
         }
 
@@ -118,7 +118,6 @@ const EditPatient = () => {
         await actions.accessConfirmationPatient();
         const token = sessionStorage.getItem("tokenPatient");
         if (token === null && store.isTokenAuthentication == true) {
-            console.log("El token se venció, ingrese nuevamente");
             alert("You do not have access to this page, please log in or create an account");
             goToHome("/");
         }

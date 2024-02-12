@@ -9,7 +9,7 @@ const SnackBarLogin = forwardRef((props, ref) => {
             setShowSnack(true)
             setTimeout(() => {
                 setShowSnack(false)
-            }, 4000)
+            }, 3000)
         },
     }))
 

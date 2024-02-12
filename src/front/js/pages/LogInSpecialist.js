@@ -102,7 +102,6 @@ const LogInSpecialist = () => {
             if (result.specialist && result.accessToken) {
                 setLoginSuccess(true)
                 const token = result.accessToken;
-                console.log('Este es el resultado:', result.specialist);
                 sessionStorage.setItem('tokenSpecialist', token)
                 await actions.accessConfirmationSpecialist();
                 sessionStorage.setItem("specialistId", store.informationSpecialist.id)
@@ -121,21 +120,9 @@ const LogInSpecialist = () => {
                 setCheckLoginBotton(true)
                 return;
 
-                sessionStorage.setItem("payStatus", store.informationSpecialist.is_authorized)
-                const payStatus = sessionStorage.getItem("payStatus")
-                console.log("Este es el estatus del pago de suscripción", payStatus)
-                if (payStatus === "true") {
-                    alert("Hola")
-                    navigate(`/profile/specialist/${specialistId}`)
-
-                } else {
-                    alert("Chau")
-                    navigate(`/profile/paymentPage/${specialistId}`)
-                }
-
             }
         } catch (error) {
-            console.error('Hubo un error con la consulta', error);
+            console.error(error);
         }
     };
 

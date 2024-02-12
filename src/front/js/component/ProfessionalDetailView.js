@@ -21,7 +21,6 @@ const NewProfessionalDetailView = () => {
         const specialistData = await actions.loadSpecialistById(id);
         setSpecialist(specialistData);
         setLoading(false);
-        console.log(loading)
       } catch (error) {
         console.error('Error fetching specialist:', error);
         setError(error.message);

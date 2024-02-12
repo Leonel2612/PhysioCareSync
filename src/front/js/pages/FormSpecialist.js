@@ -39,7 +39,6 @@ const FormSpecialist = () => {
         let limitCertificates = imgCertificate.length + store.informationSpecialist.certificates.length
         let amountOfCertificates = 5 - store.informationSpecialist.certificates.length
         setNumCertifications(amountOfCertificates)
-        console.log(amountOfCertificates)
 
         if (imgCertificate) {
             if (imgCertificate.length > 5 || limitCertificates > 5) {
@@ -132,13 +131,12 @@ const FormSpecialist = () => {
             setEditSuccess(true)
             snackRef.current.show()
         } else if (result.error) {
-            console.log("Error al acualizar los datos del usuario")
+            console.log(result.error)
             snackRef.current.show()
         }
         await actions.editImagesSpecialist(formImages, specialistId);
         let countCertificates = 0
         if (finalImageCertificates == null) {
-            console.log("no hay valores!, por lo tanto no se subiran certificados!")
         }
         else {
             for (let i = 0; i < finalImageCertificates.length; i++) {
@@ -164,7 +162,6 @@ const FormSpecialist = () => {
         await actions.accessConfirmationSpecialist();
         const token = sessionStorage.getItem("tokenSpecialist");
         if (token === null) {
-            console.log("El token se venció, ingrese nuevamente");
             goToHome("/");
         }
     };

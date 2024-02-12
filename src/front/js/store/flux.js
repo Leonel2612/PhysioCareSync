@@ -163,7 +163,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			loadPatientById: async (patientId) => {
-				console.log(patientId)
 				try {
 					const response = await fetch(API_URL + `/api/get_information_patient/${patientId}`);
 
@@ -202,7 +201,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return ({ error: "There was an error with the login action" })
 					}
 					const data = await response.json();
-					console.log("Log In successful")
 					return data
 				} catch (error) {
 					console.error("An error occurred with the query")
@@ -262,7 +260,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					store.isTokenAuthentication == false
 					const data = await response.json();
-					console.log("Still have access, this is the information you need from back end", data)
 					setStore({ ...store, informationSpecialist: data.specialist })
 
 				} catch (error) {
@@ -302,7 +299,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return ({ error: "There was an error with the login action" })
 					}
 					const data = await response.json();
-					console.log("Log In successful")
 					return data
 
 				} catch (error) {
@@ -325,7 +321,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw new Error("There was a problem with the function in flux");
 					}
 					const data = await response.json();
-					console.log("User created successfully,", data)
 					return data;
 
 				} catch (error) {
@@ -347,7 +342,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw new Error("There was a problem with the funtion in flux")
 					}
 					const data = await response.json();
-					console.log("User created successfully", data)
 					return data;
 
 				} catch (error) {
@@ -424,7 +418,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					store.isTokenAuthentication == false
 					const data = await response.json();
-					console.log("Still have access, this is the information you need from back end", data)
 					setStore({ ...store, informationAdministration: data })
 
 				} catch (error) {
@@ -508,7 +501,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			createPreference: async (theid) => {
 				try {
-					console.log("Aquí está el id del actions", theid)
 					const response = await fetch(API_URL + "/api/create_preference", {
 
 						method: "POST",
@@ -525,14 +517,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 
 					if (response.ok) {
-						console.log("El response vino ok del back end y tiene esta info: ", response)
 						const data = await response.json();
 						const { id } = data;
-						console.log("ESTE ES EL FAMOSO ID: ", id)
 						let store = getStore()
 						setStore({ ...store, preferenceId: id })
 						let store2 = getStore()
-						console.log("Este es el contenido de id en el store: ", store2.preferenceId)
 						return id;
 					} else {
 						console.error("Error creating preference, o sea response.ok dio false en flux.js");
@@ -545,10 +534,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			editPatient: async (newInformationForm, patientId) => {
-				console.log(newInformationForm)
 				const nameRoute = "/api/update_information_patient/"
 				const stringPatientId = String(patientId)
-				console.log(API_URL + nameRoute + stringPatientId)
 				const store = getStore()
 				try {
 					const response = await fetch(API_URL + nameRoute + stringPatientId, {
@@ -562,7 +549,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (response.ok) {
 						const data = await response.json()
-						console.log("Changes of user upload succesfully")
 						setStore({ ...store, informationPatient: data.patient })
 						return data;
 					}
@@ -578,10 +564,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			editImagePatient: async (image, patientId) => {
-				console.log(image)
 				const nameRoute = "/api/update_img_patient/"
 				const stringPatientId = String(patientId)
-				console.log(API_URL + nameRoute + stringPatientId)
 				const store = getStore()
 				try {
 
@@ -596,7 +580,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (response.ok) {
 						const data = await response.json()
-						console.log("image upload succesfully")
 						setStore({ ...store, informationPatient: data.patient })
 					}
 
@@ -622,7 +605,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (response.ok) {
 						const jsonResponse = await response.json();
-						console.log("Changes upload successfully");
 						getActions().setSpecialistInformation(jsonResponse.specialist);
 						return jsonResponse
 					} else {
@@ -651,7 +633,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (response.ok) {
 						const jsonResponse = await response.json()
-						console.log("images upload succesfully")
 						setStore({ ...store, informationSpecialist: jsonResponse.specialist })
 					}
 
@@ -671,10 +652,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const route = "/api/upload_certificates_specialist/"
 				store.messageUploadCertificates = "Subiendo información..."
 
-				// for (var pair of formCertificates.entries()) {
-				// 	console.log(pair[0] + ' ' + pair[1])
-				// }
-
+			
 				try {
 					const response = await fetch(API_URL + route + stringSpecialistId, {
 						method: "POST",
@@ -688,7 +666,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const jsonResponse = await response.json()
 						store.messageUploadCertificates = "Subida de información exitosa"
 						setStore({ ...store, informationSpecialistSetCertificates: jsonResponse.specialist_information })
-						console.log(jsonResponse.specialist_information)
 					}
 
 					else {
@@ -699,7 +676,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				catch (error) {
 					store.messageUploadCertificates = "Subida de información fallida"
-					console.log("There was an error, check it out", error)
 				}
 			},
 
@@ -712,7 +688,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const data = await response.json()
 					const store = getStore();
 					setStore({ ...store, viewSpecialist: data })
-					console.log("This is the specialist information", data)
 
 				} catch (error) {
 					console.error("There is an error getting the specialist info:", error)
@@ -734,7 +709,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw new Error("There was an error with the response from backend")
 					}
 					const data = await response.json()
-					console.log("Authorizatiion success", data)
 					return data
 
 				} catch (error) {

@@ -40,7 +40,6 @@ const ProfilePatient = () => {
 
 
   const isAuthenticatedPatientId = store.informationPatient.length ? store.informationPatient.id : parseInt(theid)
-  console.log(isAuthenticatedPatientId)
 
   const profileImageEmpty = "https://res.cloudinary.com/dxgvkwunx/image/upload/v1703777652/PhysioCareSync/imagen_sin_todo_perfil_ajw2oh.jpg"
   const registerPatientDateUTC = new Date(store.informationPatient.created_at)

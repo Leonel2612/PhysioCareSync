@@ -36,7 +36,6 @@ const NewProfessionalDetailViewAdmin = () => {
                 const specialistData = await actions.loadSpecialistById(id);
                 setSpecialist(specialistData);
                 setLoading(false);
-                console.log(loading)
             } catch (error) {
                 console.error('Error fetching specialist:', error);
                 setError(error.message);
@@ -66,7 +65,7 @@ const NewProfessionalDetailViewAdmin = () => {
                 window.location.reload()
             }, 3000);
         } catch (error) {
-            console.log("Hubo un error al borrar al especialista", error);
+            console.log(error);
         }
     };
 
@@ -76,7 +75,6 @@ const NewProfessionalDetailViewAdmin = () => {
     const checkAccess = async () => {
         await actions.accessConfirmationAdmin();
         const token = sessionStorage.getItem('tokenAdmin');
-        console.log(store.isTokenAuthentication)
         if (!token) {
             goToHome('/');
         }

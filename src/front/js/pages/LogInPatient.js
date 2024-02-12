@@ -112,7 +112,6 @@ const LogInPatient = () => {
                 setTimeout(() => {
                     navigate(`/profile/patient/${patientId}`)
                 }, 2000)
-                // console.log("This is your token patient", tokenPatient) //Eliminar 
 
             } else if (result.error) {
                 setHideAlert(true)

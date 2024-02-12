@@ -21,7 +21,8 @@ const NewPatient = () => {
   const [clickedLastName, setClickedLastName] = useState(false);
   const [clickedEmail, setClickedEmail] = useState(false);
   const [clickedPassword, setClickedPassword] = useState(false);
-
+  const [enableButtons,setEnableButtons]=useState(false)
+  
   // Estado de fortaleza de contraseña
   const [passwordStrength, setPasswordStrength] = useState({ score: 0 });
 
@@ -94,6 +95,7 @@ const NewPatient = () => {
   // Función para crear el paciente
   const handlerCreatePatient = async () => {
     try {
+      setEnableButtons(true)
       if (
         firstName === '' ||
         lastName === '' ||
@@ -102,6 +104,9 @@ const NewPatient = () => {
         !isEmailValid(email)
       ) {
         snackRef.current.show();
+        setTimeout(()=>{
+          setEnableButtons(false)
+        },2000)
         return;
       }
 
@@ -117,16 +122,18 @@ const NewPatient = () => {
       setSignupSuccess(true)
       snackRef.current.show()
       setTimeout(() => {
+        setEnableButtons(false)
         navigate('/login/loginPatient'); 
-
       }, 3000)
       } else if(result.error){
-        console.log("Error al crear el paciente", result.error)
+        console.log(result.error)
+        setEnableButtons(false)
         snackRef.current.show();
         return;
       }
     } catch (error) {
-      console.error('Hubo un error al crear el paciente', error);
+      setEnableButtons(false)
+      console.error(error);
     }
   };
 
@@ -216,15 +223,12 @@ const NewPatient = () => {
       <br />
 
       <div className='createNewBtn'>
-        <button onClick={handlerCreatePatient} type="button" className="btn btn-success">
+        <button onClick={handlerCreatePatient} disabled={enableButtons} type="button" className="btn btn-success">
           Crear
         </button>
-
-        <Link to={'/signup'}>
-          <button type="button" className="btn btn-outline-primary exitBtn">
+          <button type="button" disabled={enableButtons} onClick={()=>navigate('/signup')} className="btn btn-outline-primary exitBtn">
             Salir
           </button>
-        </Link>
       </div>
     </div>
     <br></br>

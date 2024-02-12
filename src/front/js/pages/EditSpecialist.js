@@ -32,7 +32,6 @@ const EditSpecialist = () => {
 
     const handleEditInformation = (nameValue, value) => {
         setFormInformationSpecialist({ ...formInformationSpecialist, [nameValue]: value })
-        console.log(formInformationSpecialist)
     }
 
     const handleSubmitInformation = async (form, specialistId, imageSpecialist, imageCertificate) => {

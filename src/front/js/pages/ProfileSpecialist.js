@@ -60,7 +60,6 @@ const ProfileSpecialist = () => {
     };
 
     const isAuthenticatedSpecialistId = store.informationSpecialist.length ? store.informationSpecialist.id : parseInt(theid);
-    console.log(isAuthenticatedSpecialistId);
 
     const profileImageEmpty = "https://res-console.cloudinary.com/dxgvkwunx/thumbnails/v1/image/upload/v1703884900/UGh5c2lvQ2FyZVN5bmMvaW1hZ2VuX3Npbl9mb25kb19lbmZlcm1lcm9faG95emVp/preview";
     const registerSpecialistDateUTC = new Date(store.informationSpecialist.created_at);

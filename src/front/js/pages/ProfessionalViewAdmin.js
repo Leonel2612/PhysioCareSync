@@ -103,7 +103,6 @@ const ProfessionalViewAdmin = () => {
         return <p>Error: {error}</p>;
     }
 
-    console.log(store.specialistsList)
 
     return (
         <div className="professional-view-container">

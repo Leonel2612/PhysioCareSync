@@ -8,7 +8,6 @@ const PaySuccess = () => {
   const specialistId = sessionStorage.getItem("specialistId")
 
   const handlerProfile = async () => {
-    console.log("Este es el id recuperado", specialistId)
     navigate(`/profile/specialist/${specialistId}`)
   }
   const authorizePayment = async () => {

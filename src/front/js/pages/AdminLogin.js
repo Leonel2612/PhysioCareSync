@@ -13,7 +13,6 @@ const AdminLogin = () => {
             setLoading(true)
         }, 2000)
     }, [])
-    console.log(store.informationAdministration)
 
     return (
         !loading ? (<Loader />) :

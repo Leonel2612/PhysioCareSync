@@ -17,15 +17,12 @@ export const Home = () => {
   
 
   const handleLoginClick = () => {
-    console.log("Botón de iniciar sesión clicado");
   };
 
   const handleLearnMoreClick = () => {
-    console.log("Botón de aprender más clicado");
   };
 
   const handleSignUpClick = () => {
-    console.log("Botón de registrarse clicado");
     navigate('/signup/newSpecialist');
   };
   
@@ -64,13 +61,11 @@ export const Home = () => {
   }, [])
 
   if (tokenAuthenticationSpecialist && store.isTokenAuthentication == true) {
-    console.log("aqui entre a pesar de cerrar sesion especialista")
     useEffect(() => {
       checkAccessSpecialist()
     }, [])
   }
   else if (tokenAuthenticationPatient && store.isTokenAuthentication == true) {
-    console.log("aqui entre a pesar de cerrar sesion paciente")
     useEffect(() => {
       checkAccessPatient()
     }, [])

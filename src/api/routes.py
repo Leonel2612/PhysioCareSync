@@ -317,13 +317,9 @@ def create_preference():
                 }
             ],
             "back_urls": {
-
-
-                "success": "https://miniature-potato-7xpx97vppww3rxgv-3000.app.github.dev/success",
-                "failure": "https://miniature-potato-7xpx97vppww3rxgv-3000.app.github.dev/failure",
-                "pending": "https://miniature-potato-7xpx97vppww3rxgv-3000.app.github.dev/pending",
-
-
+                "success": "https://physiocaresync.onrender.com//success",
+                "failure": "https://physiocaresync.onrender.com//failure",
+                "pending": "https://physiocaresync.onrender.com/pending",
             },
             "auto_return": "approved",
         }
@@ -502,7 +498,6 @@ def upload_certificates_by_specialist(specialist_id_certificate):
         certificate_path=None
         specialist=Specialist.query.get(specialist_id_certificate)
         num_certificates=int(request.form.get("num_certificates"))
-        print(num_certificates)
         folder_name="PhysioCareSync"
         for i in range(1,num_certificates+1):
             certificate_key=f"certificates_url_{i}"

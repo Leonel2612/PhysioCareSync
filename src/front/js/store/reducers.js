@@ -8,7 +8,6 @@ const rootReducer = (state = initialState, action) => {
         return { ...state, whoIsLogged: null, isLogged: false };
       case 'DELETE_TOKEN':
         
-        console.log('Token eliminado'); 
     
         return { ...state, whoIsLogged: null, isLogged: false };
       default:

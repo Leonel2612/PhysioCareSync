@@ -106,7 +106,6 @@ const InformationNewAdmin = () => {
                 const token = result.accessToken;
                 sessionStorage.setItem('tokenAdmin', token)
                 await actions.accessConfirmationAdmin();
-                console.log(store.informationAdministration)
                 sessionStorage.setItem("adminId", store.informationAdministration.admin.id)
                 const adminId = sessionStorage.getItem("adminId")
 
@@ -132,7 +131,7 @@ const InformationNewAdmin = () => {
                 return;
             }
         } catch (error) {
-            console.error('Hubo un error con la consulta', error);
+            console.error(error);
         }
     };
 

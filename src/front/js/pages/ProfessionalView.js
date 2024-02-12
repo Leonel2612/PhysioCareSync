@@ -43,7 +43,6 @@ const ProfessionalView = () => {
     )
 
   }
-  console.log(store.specialistsList)
 
   const handleChangePage = useCallback((page) => {
     setPage(page)
@@ -103,7 +102,6 @@ const ProfessionalView = () => {
     return <p>Error: {error}</p>;
   }
 
-  console.log(store.specialistsList)
 
   return (
     <div className="professional-view-container">

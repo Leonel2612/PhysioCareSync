@@ -32,7 +32,6 @@ const ViewPatientDetailAdmin = () => {
                 const patientData = await actions.loadPatientById(id);
                 setPatient(patientData);
                 setLoading(false);
-                console.log(loading)
             } catch (error) {
                 console.error('Error fetching patient:', error);
                 setError(error.message);
@@ -73,7 +72,6 @@ const ViewPatientDetailAdmin = () => {
     const checkAccess = async () => {
         await actions.accessConfirmationAdmin();
         const token = sessionStorage.getItem('tokenAdmin');
-        console.log(store.isTokenAuthentication)
         if (!token) {
             goToHome('/');
         }
