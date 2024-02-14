@@ -126,8 +126,8 @@ def get_private_admin():
     try:
         admin_validation=get_jwt_identity()
         if admin_validation:
-             admin=Administration.query.get(admin_validation)
-             return jsonify ({"message":"Token is valid", "admin": admin.serialize() })
+            admin=Administration.query.get(admin_validation)
+            return jsonify ({"message":"Token is valid", "admin": admin.serialize() })
         
        
     except ExpiredSignatureError:
@@ -289,8 +289,8 @@ def get_private_specialist():
     try:
         specialist_validation=get_jwt_identity()
         if specialist_validation:
-             specialist=Specialist.query.get(specialist_validation)
-             return jsonify ({"message":"Token is valid", "specialist": specialist.serialize() })
+            specialist=Specialist.query.get(specialist_validation)
+            return jsonify ({"message":"Token is valid", "specialist": specialist.serialize() })
         
        
     except ExpiredSignatureError:
